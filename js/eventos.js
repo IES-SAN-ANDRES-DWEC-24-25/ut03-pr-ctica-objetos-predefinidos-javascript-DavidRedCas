@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ejercicio 1
     document.getElementById('btnFecha').addEventListener('click', () => {
         const fecha = obtenerFechaActual();
-        document.getElementById('resultadoFecha').innerText = `Fecha Actual: ${fecha}`;
+        const resultadoElement = document.getElementById('resultado');
+        alert(`Fecha actual: ${fecha}`);
     });
 
     // Ejercicio 2
@@ -13,14 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         const area = calcularAreaCirculo(radio);
-        document.getElementById('resultadoArea').innerText = `Área del Círculo: ${area}`;
+        alert(`Área del Círculo: ${area}`);
     });
 
     // Ejercicio 3
     document.getElementById('btnContarVocales').addEventListener('click', () => {
         const cadena = document.getElementById('cadenaVocales').value;
         const total = contarVocales(cadena);
-        document.getElementById('resultadoVocales').innerText = `Número de Vocales: ${total}`;
+        alert(`Número de Vocales: ${total}`);
     });
 
     // Ejercicio 4
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         const fahrenheit = celsiusAFahrenheit(celsius);
-        document.getElementById('resultadoFahrenheit').innerText = `${celsius}°C = ${fahrenheit}°F`;
+        alert(`${celsius}°C = ${fahrenheit}°F`);
     });
 
     // Ejercicio 5
@@ -42,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         const numeroFormateado = formatearNumero(numero);
-        document.getElementById('resultadoNumero').innerText = `Número Formateado: ${numeroFormateado}`;
+        alert(`Número Formateado: ${numeroFormateado}`);
     });
 
     // Ejercicio 6
@@ -52,11 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Por favor, seleccione una fecha.');
             return;
         }
-        // Convertir formato "yyyy-mm-dd" a "dd/mm/yyyy"
-        const partes = fechaInput.split('-');
-        const fechaFormateada = `${partes[2]}/${partes[1]}/${partes[0]}`;
-        const dias = reyesMagos(fechaFormateada);
-        document.getElementById('resultadoReyes').innerText = `Días para Reyes Magos: ${dias}`;
+        const dias = reyesMagos(fechaInput);
+        alert(`Días para Reyes Magos: ${dias}`);
     });
 
     // Ejercicio 7
@@ -74,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         const resultado = calcularAleatorio(minimo, maximo);
-        document.getElementById('resultadoAleatorio').innerText = `${resultado}`;
+        alert(`${resultado}`);
     });
 
     // Ejercicio 8
@@ -90,13 +88,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const cadena = document.getElementById('cadenaPalindromo').value;
         const esPal = esPalindromo(cadena);
         const mensaje = esPal ? 'Es un palíndromo.' : 'No es un palíndromo.';
-        document.getElementById('resultadoPalindromo').innerText = mensaje;
+        alert(`${mensaje}`);
     });
 
     // Ejercicio 10
     document.getElementById('btnCamelCase').addEventListener('click', () => {
         const cadena = document.getElementById('cadenaCamelCase').value;
         const camel = camelCase(cadena);
-        document.getElementById('resultadoCamelCase').innerText = `lowerCamelCase: ${camel}`;
+        alert(`lowerCamelCase: ${camel}`);
     });
 });
